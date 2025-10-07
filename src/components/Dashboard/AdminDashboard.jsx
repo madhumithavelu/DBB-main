@@ -206,7 +206,7 @@ const { users, sessions } = useAuth()
         <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <button onClick={()=>setShowCreateUserModal(true)} className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors duration-200">
-            Create New User
+            Create New User name
           </button>
           <button onClick={()=>setShowCreateSessionModal(true)
           } className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-200">
