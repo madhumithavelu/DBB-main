@@ -4,12 +4,12 @@ import { useAuth } from '../../contexts/AuthContext';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell, LineChart, Line, ResponsiveContainer } from 'recharts';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {CreateSessionModal} from '../Sessions/CreateSessionModal'
-import {CreateUserModal} from '../Users/CreateUserModal'
+import { CreateSessionModal } from '../Sessions/CreateSessionModal'
+import { CreateUserModal } from '../Users/CreateUserModal'
 const COLORS = ['#10B981', '#3B82F6', '#F59E0B', '#EF4444'];
 
 export function AdminDashboard() {
-const { users, sessions } = useAuth()
+  const { users, sessions } = useAuth()
   const userData = {
     name: "Admin User",
     email: "admin@dbb.com",
@@ -17,10 +17,10 @@ const { users, sessions } = useAuth()
     avatar: "/api/placeholder/40/40"
   }
 
-  const [showCreateUserModal,setShowCreateUserModal]=useState(false);
+  const [showCreateUserModal, setShowCreateUserModal] = useState(false);
   const [showCreateSessionModal, setShowCreateSessionModal] = useState(false);
-  const navigate=useNavigate();
-  const handleGenerateReport=()=>{
+  const navigate = useNavigate();
+  const handleGenerateReport = () => {
     navigate('/analytics');
   }
 
@@ -136,9 +136,9 @@ const { users, sessions } = useAuth()
               <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
               <XAxis dataKey="name" stroke="#9CA3AF" />
               <YAxis stroke="#9CA3AF" />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: '#1F2937', 
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: '#1F2937',
                   border: '1px solid #374151',
                   borderRadius: '0.375rem',
                   color: '#F9FAFB'
@@ -158,18 +158,18 @@ const { users, sessions } = useAuth()
               <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
               <XAxis dataKey="name" stroke="#9CA3AF" />
               <YAxis stroke="#9CA3AF" />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: '#1F2937', 
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: '#1F2937',
                   border: '1px solid #374151',
                   borderRadius: '0.375rem',
                   color: '#F9FAFB'
                 }}
               />
-              <Line 
-                type="monotone" 
-                dataKey="engagement" 
-                stroke="#10B981" 
+              <Line
+                type="monotone"
+                dataKey="engagement"
+                stroke="#10B981"
                 strokeWidth={3}
                 dot={{ fill: '#10B981', strokeWidth: 2, r: 4 }}
               />
@@ -205,10 +205,10 @@ const { users, sessions } = useAuth()
       <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
         <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <button onClick={()=>setShowCreateUserModal(true)} className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors duration-200">
-            Create New User name
+          <button onClick={() => setShowCreateUserModal(true)} className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors duration-200">
+            Create New User
           </button>
-          <button onClick={()=>setShowCreateSessionModal(true)
+          <button onClick={() => setShowCreateSessionModal(true)
           } className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-200">
             Schedule Session
           </button>
@@ -230,7 +230,8 @@ const { users, sessions } = useAuth()
         />
       )}
     </div>
-  )};
+  )
+};
 
 
 

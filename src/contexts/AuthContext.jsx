@@ -93,9 +93,9 @@ export function AuthProvider({ children }) {
       const upcomingSessions = sessions.filter(session => {
         const sessionTime = new Date(session.startTime);
         return session.trainees.includes(user.id) &&
-               session.status === 'scheduled' &&
-               sessionTime > now &&
-               sessionTime <= fiveMinutesFromNow;
+          session.status === 'scheduled' &&
+          sessionTime > now &&
+          sessionTime <= fiveMinutesFromNow;
       });
 
       const newNotifications = upcomingSessions.map(session => ({
@@ -140,7 +140,7 @@ export function AuthProvider({ children }) {
     const updatedUser = { ...user, ...updates };
     setUser(updatedUser);
     localStorage.setItem('user', JSON.stringify(updatedUser));
-    
+
     setUsers(prev => prev.map(u => u.id === updatedUser.id ? updatedUser : u));
   };
 
