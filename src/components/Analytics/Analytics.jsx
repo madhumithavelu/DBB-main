@@ -20,7 +20,7 @@ export function Analytics() {
 
   const stats = [
     {
-      name: 'Total Sessions',
+      name: 'Total Sessions and add',
       value: filteredSessions.length,
       icon: Award,
       color: 'bg-green-600',
